@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,6 +18,8 @@ public class BasePage {
     protected WebDriverWait wait;
 
     private final Actions actions;
+
+    protected WebElement product_purchasedSign;
 
 
     public BasePage(WebDriver driver){
@@ -50,6 +53,10 @@ public class BasePage {
     public void click_Element(WebElement element){
         getWait().until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+    }
+
+    public void ProductOn_Chart() {
+        this.product_purchasedSign = driver.findElement(By.className("shopping_cart_badge"));
     }
 
 

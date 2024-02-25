@@ -13,19 +13,16 @@ public class Data_getter {
     public static Object[][] unsuccessful_Login() {
         return new Object[][] {
                 {
-                        "incorrect_user",
-                        "incorrect_password"
+                        "incorrect_user", "incorrect_password"
                 }
         };
     }
 
     @DataProvider(name = "checkout_info")
-    public static Object[][] testDataCheckoutStepOne() {
+    public static Object[][] Personal_info_Purchasing() {
         return new Object[][] {
                 {
-                        "Jonathan",
-                        "Lopez",
-                        "050051"
+                        "Jonathan", "Lopez", "050051"
                 }
         };
     }
