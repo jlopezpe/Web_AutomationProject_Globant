@@ -5,13 +5,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Random;
 
 public class MainPage extends BasePage {
 
     @FindBy(css = "[data-test*='add-to-cart']")
-    private List<WebElement> addToCartButtons;
+    private List<WebElement> buttons_addcart;
 
     public MainPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void Purchase_oneProduct() {
+
+        //creation of a random num for purchase a random product
+        Random random_num = new Random();
+        int num = random_num.nextInt(buttons_addcart.size());
+        click_Element(buttons_addcart.get(num));
+        ProductOn_Chart();
     }
 }
