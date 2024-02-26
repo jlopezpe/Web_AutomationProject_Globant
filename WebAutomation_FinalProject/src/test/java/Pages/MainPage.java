@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +24,14 @@ public class MainPage extends BasePage {
         Random random_num = new Random();
         int num = random_num.nextInt(buttons_addcart.size());
         click_Element(buttons_addcart.get(num));
+        ProductOn_Chart();
+    }
+
+    public void Purchase_threeProducts(){
+        Collections.shuffle(buttons_addcart);
+        click_Element(buttons_addcart.get(0));
+        click_Element(buttons_addcart.get(1));
+        click_Element(buttons_addcart.get(2));
         ProductOn_Chart();
     }
 }

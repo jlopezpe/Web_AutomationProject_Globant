@@ -19,4 +19,10 @@
         </classes>
     </test>
 
+    <test name="Deteled_Products">
+        <classes>
+            <class name="Tests.Products_Deleted_Test"/>
+        </classes>
+    </test>
+
 </suite>

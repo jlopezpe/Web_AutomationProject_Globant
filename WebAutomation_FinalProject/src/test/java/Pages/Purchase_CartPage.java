@@ -33,4 +33,13 @@ public class Purchase_CartPage extends BasePage{
         return items_cart.size();
     }
 
+    public void clickRemove_threeProducts(){
+
+        for(WebElement remove_buttons: remove_buttons){
+
+            click_Element(remove_buttons);
+        }
+        remove_buttons.clear();
+    }
+
 }
