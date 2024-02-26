@@ -20,4 +20,17 @@ public class Purchase_CartPage extends BasePage{
         super(driver);
 
     }
+    public void remove_elements(){
+        for (WebElement button_remove:remove_buttons){
+            click_Element(button_remove);
+        }
+        remove_buttons.clear();
+    }
+    public void click_CheckoutButton(){
+        click_Element(checkout_button);
+    }
+    public Integer size_cart(){
+        return items_cart.size();
+    }
+
 }
