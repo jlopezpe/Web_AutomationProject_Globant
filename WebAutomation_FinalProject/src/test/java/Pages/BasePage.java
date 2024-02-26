@@ -23,11 +23,18 @@ public class BasePage {
 
     protected WebElement product_purchasedSign;
 
-    @FindBy(xpath ="/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]")
+    @FindBy(className ="title")
     private WebElement MainTitle;
 
     @FindBy(css="#shopping_cart_container .shopping_cart_link")
     private WebElement cart;
+
+    @FindBy(id = "react-burger-menu-btn")
+    private WebElement burger_button;
+
+    @FindBy(id = "logout_sidebar_link")
+    private WebElement logout_button;
+
 
     public BasePage(WebDriver driver){
         this.driver=driver;
@@ -75,8 +82,22 @@ public class BasePage {
     }
 
     public void click_cart() {
-        click_Element(cart);
+        click_Element(this.cart);
     }
+
+
+    public void click_menuBurguer(){
+        click_Element(this.burger_button);
+        //WebElement logoutButton = driver.findElement(By.id("logout_sidebar_link"));
+        //setLogoutButton(logoutButton);
+    }
+    public void click_logout(){
+        click_Element(this.logout_button);
+    }
+
+    //public void click_logout(){
+    //click_Element(this.logout_button);
+    //}
 
 
 }

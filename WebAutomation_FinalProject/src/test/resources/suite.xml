@@ -13,4 +13,10 @@
         </classes>
     </test>
 
+    <test name="Logging_out">
+        <classes>
+            <class name="Tests.LogoutTest"/>
+        </classes>
+    </test>
+
 </suite>
