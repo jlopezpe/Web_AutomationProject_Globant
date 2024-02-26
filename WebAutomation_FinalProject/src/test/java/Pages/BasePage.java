@@ -82,17 +82,17 @@ public class BasePage {
     }
 
     public void click_cart() {
-        click_Element(cart);
+        click_Element(this.cart);
     }
 
 
     public void click_menuBurguer(){
-        click_Element(burger_button);
+        click_Element(this.burger_button);
         //WebElement logoutButton = driver.findElement(By.id("logout_sidebar_link"));
         //setLogoutButton(logoutButton);
     }
     public void click_logout(){
-        click_Element(logout_button);
+        click_Element(this.logout_button);
     }
 
     //public void click_logout(){

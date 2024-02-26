@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,12 @@ public class LoginPage extends BasePage{
     // i coudnt know why it didn't work
     @FindBy(id="login-button")
     private WebElement login_button;
+    String login_input = driver.findElement(By.cssSelector("input[value='Login']")).getAttribute("value");
+
+    public String getLogin_input() {
+        return login_input;
+    }
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -31,8 +38,8 @@ public class LoginPage extends BasePage{
         click_Element(this.login_button);
     }
 
-    public String search_LoginButtonName(){
-        return this.login_button.getText();
-    }
+    //public String search_LoginButtonName(){
+       // return this.login_button.getText();
+    //}
 
 }
