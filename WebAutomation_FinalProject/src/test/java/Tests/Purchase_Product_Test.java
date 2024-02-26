@@ -28,5 +28,9 @@ public class Purchase_Product_Test extends BaseTest{
         main_page.click_cart();
 
         Purchase_CartPage cart = new Purchase_CartPage(driver);
+        Assert.assertEquals(cart.get_Title(), title_Cartpage);
+        Assert.assertEquals(cart.size_cart(), cart_quantity);
+        cart.click_CheckoutButton();
+
     }
 }
