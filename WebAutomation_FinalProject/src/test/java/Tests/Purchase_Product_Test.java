@@ -32,5 +32,6 @@ public class Purchase_Product_Test extends BaseTest{
         Assert.assertEquals(cart.size_cart(), cart_quantity);
         cart.click_CheckoutButton();
 
+        
     }
 }

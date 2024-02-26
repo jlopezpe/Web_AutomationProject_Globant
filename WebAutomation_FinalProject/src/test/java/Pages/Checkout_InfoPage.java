@@ -18,4 +18,16 @@ public class Checkout_InfoPage extends BasePage {
     public Checkout_InfoPage(WebDriver driver) {
         super(driver);
     }
+    public void write_firstname(String first_name){
+        write_Text(this.first_name,first_name);
+    }
+    public void write_lastname(String last_name){
+        write_Text(this.last_name,last_name);
+    }
+    public void write_postalCode(String postal_code){
+        write_Text(this.postal_code,postal_code);
+    }
+    public void click_continueButton(){
+        click_Element(button_continue);
+    }
 }
