@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.Checkout_InfoPage;
 import Pages.MainPage;
 import Pages.Purchase_CartPage;
 import org.testng.Assert;
@@ -9,13 +10,13 @@ import outils.Data_getter;
 
 public class Purchase_Product_Test extends BaseTest{
 
-    private String title_Mainpage = "Products";
-    private String title_Cartpage = "Your Cart";
-    private String title_purchasing_step1 = "Checkout: Your Information";
-    private String title_purchasing_step2 = "Checkout: Overview";
-    private String title_purchasing_step3 = "Checkout: Complete!";
-    private String purchased_sign = "1";
-    private int cart_quantity= 1;
+    private final String title_Mainpage = "Products";
+    private final String title_Cartpage = "Your Cart";
+    private final String title_checkoutPage = "Checkout: Your Information";
+    private final String title_checkoutOverview = "Checkout: Overview";
+    private final String title_CheckoutComplete = "Checkout: Complete!";
+    private final String purchased_sign = "1";
+    private final int cart_quantity= 1;
     @Test(dataProvider = "checkout_info",dataProviderClass = Data_getter.class)
     public void purchaseTest(String first_name,String last_name, String postal_code) {
 
@@ -32,6 +33,13 @@ public class Purchase_Product_Test extends BaseTest{
         Assert.assertEquals(cart.size_cart(), cart_quantity);
         cart.click_CheckoutButton();
 
-        
+        Checkout_InfoPage checkout_InfoPage = new Checkout_InfoPage(driver);
+        Assert.assertEquals(checkout_InfoPage.get_Title(), title_checkoutPage);
+
+
+        checkout_InfoPage.write_firstname(first_name);
+        checkout_InfoPage.write_lastname(last_name);
+        checkout_InfoPage.write_postalCode(postal_code);
+        checkout_InfoPage.click_continueButton();
     }
 }

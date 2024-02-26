@@ -23,7 +23,7 @@ public class BasePage {
 
     protected WebElement product_purchasedSign;
 
-    @FindBy(xpath ="/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]")
+    @FindBy(className ="title")
     private WebElement MainTitle;
 
     @FindBy(css="#shopping_cart_container .shopping_cart_link")
