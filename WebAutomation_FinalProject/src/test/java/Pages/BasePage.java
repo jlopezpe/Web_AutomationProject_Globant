@@ -29,6 +29,13 @@ public class BasePage {
     @FindBy(css="#shopping_cart_container .shopping_cart_link")
     private WebElement cart;
 
+    @FindBy(id = "react-burger-menu-btn")
+    private WebElement burger_button;
+
+    @FindBy(id = "logout_sidebar_link")
+    private WebElement logout_button;
+
+
     public BasePage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -77,6 +84,20 @@ public class BasePage {
     public void click_cart() {
         click_Element(cart);
     }
+
+
+    public void click_menuBurguer(){
+        click_Element(burger_button);
+        //WebElement logoutButton = driver.findElement(By.id("logout_sidebar_link"));
+        //setLogoutButton(logoutButton);
+    }
+    public void click_logout(){
+        click_Element(logout_button);
+    }
+
+    //public void click_logout(){
+    //click_Element(this.logout_button);
+    //}
 
 
 }

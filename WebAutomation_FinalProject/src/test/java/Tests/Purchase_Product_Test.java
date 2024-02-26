@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.Checkout_InfoPage;
-import Pages.Checkout_OverviewPage;
-import Pages.MainPage;
-import Pages.Purchase_CartPage;
+import Pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
@@ -47,8 +44,8 @@ public class Purchase_Product_Test extends BaseTest{
         Assert.assertEquals(checkout_overviewPage.get_Title(), title_checkoutOverview);
         checkout_overviewPage.ClickButton_finish();
 
-        
-
+        Checkout_CompletePage purchase_complete= new Checkout_CompletePage(driver);
+        Assert.assertEquals(purchase_complete.get_Title(),title_CheckoutComplete);
 
     }
 }
