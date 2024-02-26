@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.MainPage;
+import Pages.Purchase_CartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
@@ -25,5 +26,7 @@ public class Purchase_Product_Test extends BaseTest{
         Assert.assertEquals(main_page.get_ProductOn_Chart(),purchased_sign);
 
         main_page.click_cart();
+
+        Purchase_CartPage cart = new Purchase_CartPage(driver);
     }
 }
