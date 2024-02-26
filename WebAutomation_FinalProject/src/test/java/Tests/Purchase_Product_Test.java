@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.Checkout_InfoPage;
+import Pages.Checkout_OverviewPage;
 import Pages.MainPage;
 import Pages.Purchase_CartPage;
 import org.testng.Assert;
@@ -41,5 +42,13 @@ public class Purchase_Product_Test extends BaseTest{
         checkout_InfoPage.write_lastname(last_name);
         checkout_InfoPage.write_postalCode(postal_code);
         checkout_InfoPage.click_continueButton();
+
+        Checkout_OverviewPage checkout_overviewPage = new Checkout_OverviewPage(driver);
+        Assert.assertEquals(checkout_overviewPage.get_Title(), title_checkoutOverview);
+        checkout_overviewPage.ClickButton_finish();
+
+        
+
+
     }
 }
