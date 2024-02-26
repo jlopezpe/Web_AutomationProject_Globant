@@ -9,7 +9,8 @@ import java.util.Random;
 
 public class MainPage extends BasePage {
 
-    @FindBy(css = "[data-test*='add-to-cart']")
+    //tried this but doesnt work (button[data-test*='add-to-cart']) ;
+    @FindBy(css="button[data-test*='add-to-cart']")
     private List<WebElement> buttons_addcart;
 
     public MainPage(WebDriver driver) {

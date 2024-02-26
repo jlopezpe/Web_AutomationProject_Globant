@@ -3,6 +3,7 @@ import Pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import outils.MyDriver;
 
@@ -27,7 +28,7 @@ public class BaseTest {
         //navigateTo(url);
         LoginPage = new LoginPage(driver);
         //load_loginpage();
-        LoginPage.write_password(username);
+        LoginPage.write_username(username);
         LoginPage.write_password(password);
         LoginPage.click_LoginButton();
     }
