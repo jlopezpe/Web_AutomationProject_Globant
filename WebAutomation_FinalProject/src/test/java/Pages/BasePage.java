@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import outils.MyDriver;
 
 import javax.xml.xpath.XPath;
 import java.sql.Driver;
@@ -59,20 +60,28 @@ public class BasePage {
         getWait().until(ExpectedConditions.visibilityOf(element));
     }
 
+
+    //write in any field of the complete page
     public void write_Text(WebElement element, String text){
         getWait().until(ExpectedConditions.visibilityOf(element));
         element.sendKeys(text);
     }
 
+
+    //click every element on the page
     public void click_Element(WebElement element){
         getWait().until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 
+
+    //know if there are some products on the cart
     public void ProductOn_Chart() {
         this.product_purchasedSign = driver.findElement(By.className("shopping_cart_badge"));
     }
 
+
+    //get the value of the badge (quantity) has the cart
     public String get_ProductOn_Chart(){
         return this.product_purchasedSign.getText();
     }
@@ -94,10 +103,4 @@ public class BasePage {
     public void click_logout(){
         click_Element(this.logout_button);
     }
-
-    //public void click_logout(){
-    //click_Element(this.logout_button);
-    //}
-
-
 }

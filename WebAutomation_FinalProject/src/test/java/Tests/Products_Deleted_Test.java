@@ -24,13 +24,15 @@ public class Products_Deleted_Test extends BaseTest {
         MainPage mainpage= new MainPage(driver);
         Assert.assertEquals(mainpage.get_Title(),title_mainpage);
         mainpage.Purchase_threeProducts();
+        //verify that they are 3 products in the cart
         Assert.assertEquals(mainpage.get_ProductOn_Chart(),productsOnchart_quantity);
 
         mainpage.click_cart();
 
         Purchase_CartPage cartpage = new Purchase_CartPage(driver);
         Assert.assertEquals(cartpage.get_Title(),cartpage_title);
-        cartpage.clickRemove_threeProducts();
+        cartpage.remove_elements();
+        //verify that is no products on the cart =0
         Assert.assertEquals(cartpage.size_cart(),size_cart);
 
 

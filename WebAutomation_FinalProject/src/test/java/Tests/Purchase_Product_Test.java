@@ -21,12 +21,15 @@ public class Purchase_Product_Test extends BaseTest{
         MainPage main_page = new MainPage(driver);
         Assert.assertEquals(main_page.get_Title(), title_Mainpage);
 
+        //purchasing one product
         main_page.Purchase_oneProduct();
         Assert.assertEquals(main_page.get_ProductOn_Chart(),purchased_sign);
 
         main_page.click_cart();
 
         Purchase_CartPage cart = new Purchase_CartPage(driver);
+
+        //verify that is one product in the cart, and user is on the cart page
         Assert.assertEquals(cart.get_Title(), title_Cartpage);
         Assert.assertEquals(cart.size_cart(), cart_quantity);
         cart.click_CheckoutButton();
@@ -35,6 +38,7 @@ public class Purchase_Product_Test extends BaseTest{
         Assert.assertEquals(checkout_InfoPage.get_Title(), title_checkoutPage);
 
 
+        //write shipping information
         checkout_InfoPage.write_firstname(first_name);
         checkout_InfoPage.write_lastname(last_name);
         checkout_InfoPage.write_postalCode(postal_code);

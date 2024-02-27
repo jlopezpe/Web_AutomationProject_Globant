@@ -17,7 +17,7 @@ public class Checkout_InfoPage extends BasePage {
     private WebElement postal_code;
 
 
-    //id="continue"
+    //with className it would be:
     //className="submit-button btn btn_primary cart_button btn_action"
     @FindBy(id="continue")
     private WebElement button_continue;

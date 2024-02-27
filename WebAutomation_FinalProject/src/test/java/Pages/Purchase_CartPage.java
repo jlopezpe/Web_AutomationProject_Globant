@@ -20,6 +20,8 @@ public class Purchase_CartPage extends BasePage{
         super(driver);
 
     }
+
+    //from all the remove buttons that are in the cart page, we click on every button
     public void remove_elements(){
         for (WebElement button_remove:remove_buttons){
             click_Element(button_remove);
@@ -33,13 +35,5 @@ public class Purchase_CartPage extends BasePage{
         return items_cart.size();
     }
 
-    public void clickRemove_threeProducts(){
-
-        for(WebElement remove_buttons: remove_buttons){
-
-            click_Element(remove_buttons);
-        }
-        remove_buttons.clear();
-    }
 
 }

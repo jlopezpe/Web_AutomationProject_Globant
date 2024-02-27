@@ -1,11 +1,12 @@
 package outils;
 
+import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class MyDriver {
+public class MyDriver{
 
     private final WebDriver driver;
 
@@ -25,4 +26,13 @@ public class MyDriver {
             driver=new ChromeDriver();
         }
     }
+
+    public void navigateTo(String url){
+        this.getDriver().get(url);
+    }
+    //public LoginPage load_loginpage(){
+    //return new LoginPage(this.getDriver());
+    //}
+
+
 }
